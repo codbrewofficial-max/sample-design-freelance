@@ -60,7 +60,7 @@ export default function RootLayout({
         {/* Google Analytics (GA4) & Google Tag Manager (GTM) */}
         <Analytics />
       </head>
-      <body className="antialiased bg-slate-50 text-slate-900" suppressHydrationWarning>
+      <body className="antialiased bg-[#1B1E2B] text-[#1E1B4B]" suppressHydrationWarning>
         {/* GTM Noscript */}
         <GTMNoScript />
         <Navbar />

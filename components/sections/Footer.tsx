@@ -18,8 +18,11 @@ export default function Footer({ id, data, content }: SectionProps) {
   const contact = config.contact;
 
   return (
-    <footer id={id} className="bg-slate-950 text-slate-400 font-sans border-t border-slate-900 pt-16">
-      <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-12 gap-10 pb-12">
+    <footer id={id} className="bg-[#1B1E2B] rounded-[32px] shadow-xl text-slate-400 overflow-hidden p-6 md:p-12">
+      {/* Dot pattern */}
+      <div className="absolute inset-0 dot-pattern opacity-[0.03] pointer-events-none" />
+
+      <div className="relative z-10 grid grid-cols-1 md:grid-cols-12 gap-10">
         
         {/* Brand details (5 cols) */}
         <div className="md:col-span-5 space-y-6">
@@ -37,7 +40,7 @@ export default function Footer({ id, data, content }: SectionProps) {
                 href={contact.socials.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 rounded-xl bg-slate-900 hover:bg-blue-600 hover:text-white text-slate-400 transition"
+                className="p-2.5 rounded-full bg-white/5 hover:bg-[#22B8D4] hover:text-white text-slate-400 transition"
                 aria-label="Instagram"
               >
                 <Instagram size={18} />
@@ -48,7 +51,7 @@ export default function Footer({ id, data, content }: SectionProps) {
                 href={contact.socials.facebook}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 rounded-xl bg-slate-900 hover:bg-blue-600 hover:text-white text-slate-400 transition"
+                className="p-2.5 rounded-full bg-white/5 hover:bg-[#22B8D4] hover:text-white text-slate-400 transition"
                 aria-label="Facebook"
               >
                 <Facebook size={18} />
@@ -59,7 +62,7 @@ export default function Footer({ id, data, content }: SectionProps) {
                 href={contact.socials.twitter}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 rounded-xl bg-slate-900 hover:bg-blue-600 hover:text-white text-slate-400 transition"
+                className="p-2.5 rounded-full bg-white/5 hover:bg-[#22B8D4] hover:text-white text-slate-400 transition"
                 aria-label="Twitter"
               >
                 <Twitter size={18} />
@@ -73,50 +76,50 @@ export default function Footer({ id, data, content }: SectionProps) {
           
           {/* Quick links */}
           <div className="space-y-4">
-            <h4 className="text-sm font-bold text-white uppercase tracking-wider font-mono">
-              Navigasi Halaman
+            <h4 className="text-sm font-bold text-white tracking-wider">
+              Navigasi
             </h4>
             <ul className="space-y-2 text-sm">
               <li>
-                <a href="#hero-1" className="hover:text-white transition">Home</a>
+                <a href="#hero-1" className="text-slate-500 hover:text-white transition">Home</a>
               </li>
               <li>
-                <a href="#about-1" className="hover:text-white transition">Tentang Kami</a>
+                <a href="#about-1" className="text-slate-500 hover:text-white transition">Tentang</a>
               </li>
               <li>
-                <a href="#features-1" className="hover:text-white transition">Layanan</a>
+                <a href="#features-1" className="text-slate-500 hover:text-white transition">Layanan</a>
               </li>
               <li>
-                <a href="#contact-1" className="hover:text-white transition">Hubungi Kami</a>
+                <a href="#contact-1" className="text-slate-500 hover:text-white transition">Kontak</a>
               </li>
             </ul>
           </div>
 
-          {/* Contact Details info card */}
+          {/* Contact Details */}
           <div className="space-y-4">
-            <h4 className="text-sm font-bold text-white uppercase tracking-wider font-mono">
+            <h4 className="text-sm font-bold text-white tracking-wider">
               Hubungi Kami
             </h4>
-            <ul className="space-y-3 text-sm font-sans">
+            <ul className="space-y-3 text-sm">
               {contact.phone && (
                 <li className="flex items-center gap-2.5">
-                  <Phone size={16} className="text-blue-500 shrink-0" />
-                  <a href={`tel:${contact.phone}`} className="hover:text-white transition">
+                  <Phone size={16} className="text-[#22B8D4] shrink-0" />
+                  <a href={`tel:${contact.phone}`} className="text-slate-500 hover:text-white transition">
                     {contact.phone}
                   </a>
                 </li>
               )}
               {contact.email && (
                 <li className="flex items-center gap-2.5">
-                  <Mail size={16} className="text-blue-500 shrink-0" />
-                  <a href={`mailto:${contact.email}`} className="hover:text-white transition">
+                  <Mail size={16} className="text-[#22B8D4] shrink-0" />
+                  <a href={`mailto:${contact.email}`} className="text-slate-500 hover:text-white transition">
                     {contact.email}
                   </a>
                 </li>
               )}
               {contact.address && (
                 <li className="flex items-start gap-2.5">
-                  <MapPin size={16} className="text-blue-500 shrink-0 mt-0.5" />
+                  <MapPin size={16} className="text-[#22B8D4] shrink-0 mt-0.5" />
                   <span className="leading-relaxed text-slate-500">
                     {contact.address}
                   </span>
@@ -129,7 +132,6 @@ export default function Footer({ id, data, content }: SectionProps) {
 
       </div>
 
-      {/* Powered by Watermark footer */}
       <PoweredBySection />
     </footer>
   );

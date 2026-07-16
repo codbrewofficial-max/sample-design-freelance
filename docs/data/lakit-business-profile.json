@@ -1,0 +1,36 @@
+{
+  "brand": "LAKIT",
+  "industry": "Freelancer Designer (UI/UX, Graphic Design & Branding, 2D/3D Animation & Motion)",
+  "positioning": "Kreatif & playful, tapi tetap kompeten dan bisa dipercaya klien formal. Playful datang dari rasa percaya diri dan proses kerja yang jelas, bukan dari kesan amatir.",
+  "voiceMotif": "Wordplay 'LAKIT' <-> 'merakit' (ide dirakit jadi karya nyata) dipakai sebagai motif copywriting berulang di Hero dan CTA. Body copy formal (Tentang, Kontak) tetap playful tapi lebih tenang.",
+  "targetClients": ["Startup", "Government / Instansi Pemerintah", "UMKM", "Corporate"],
+  "coreServices": [
+    "UI/UX Design (Web & Mobile)",
+    "Graphic Design & Branding",
+    "2D/3D Animation & Motion"
+  ],
+  "siteStructure": {
+    "home": "Landing utama: Hero, Value-Proposition, About-Story ringkas, Gallery highlight, Testimonials 4 sektor, CTA-Banner, Footer",
+    "menu (technical slug, direkontekstualisasi jadi 'Paket Layanan')": "Price list transparan pakai komponen Menu-Display, dikelompokkan per kategori layanan",
+    "tentang": "Studio story lengkap + profil founder tunggal via komponen Team",
+    "galeri (direkontekstualisasi jadi 'Portofolio')": "Showcase karya lintas layanan & sektor",
+    "kontak": "Contact-Form + Map-Location yang direkontekstualisasi jadi info base operasi/availability, bukan alamat kantor formal"
+  },
+  "placeholdersToReplace": [
+    "config/site.config.json -> contact.phone, contact.whatsappNumber, contact.email, contact.address, contact.socials",
+    "content/tentang-team.md -> nama & foto founder asli",
+    "content/kontak-map.md -> alamat/kota domisili asli & embed Google Maps yang sesuai",
+    "content/menu-items.md -> harga paket disesuaikan dengan kalkulasi biaya & positioning harga asli"
+  ],
+  "technicalNotes": [
+    "Slug halaman (home/menu/tentang/galeri/kontak) hardcoded di routing boilerplate, tidak diganti di fase ini.",
+    "Section placeholder yang BELUM diimplementasikan di boilerplate (return null): ProductServiceGrid, Pricing, ProcessSteps, FAQ, ClientLogos, StatsNumbers, Facilities, Programs, Certifications.",
+    "Karena itu, kebutuhan 'daftar layanan' dipetakan ke Value-Proposition, dan kebutuhan 'daftar paket harga' dipetakan ke Menu-Display (bukan Pricing/ProductServiceGrid) supaya tetap pakai section yang sudah fungsional."
+  ],
+  "futureConsiderations": [
+    "FAQ section akan sangat membantu untuk preempt pertanyaan klien government/corporate soal proses kerja & legalitas invoice, tapi butuh implementasi komponen dulu (belum ada logic-nya).",
+    "ProcessSteps section cocok untuk menjelaskan alur kerja LAKIT secara visual ke klien formal, sama-sama butuh implementasi komponen terlebih dulu.",
+    "ClientLogos bisa dipakai kalau LAKIT sudah punya beberapa klien korporat/instansi yang bisa dipajang logonya sebagai social proof tambahan.",
+    "Branding color di site.config.json ini masih starter/placeholder (indigo + violet + orange playful), BUKAN hasil analisis desain sistem. Palet final akan ditentukan di sesi analisis desain sistem terpisah berdasarkan gambar referensi."
+  ]
+}

@@ -24,8 +24,8 @@ export default function Gallery({ id, data, content }: SectionProps) {
   const items = galleryData.items || [];
 
   return (
-    <section id={id} className="py-24 px-6 bg-slate-50 text-slate-900 overflow-hidden">
-      <div className="max-w-6xl mx-auto space-y-16">
+    <section id={id} className="bg-[#F5F7FA] rounded-[32px] shadow-xl p-6 md:p-12">
+      <div className="space-y-10 md:space-y-12">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4">
           <motion.h2
@@ -33,7 +33,7 @@ export default function Gallery({ id, data, content }: SectionProps) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-3xl md:text-4xl font-extrabold tracking-tight text-slate-900"
+            className="text-3xl md:text-4xl font-extrabold tracking-tight text-[#1E1B4B]"
           >
             {title}
           </motion.h2>
@@ -50,9 +50,15 @@ export default function Gallery({ id, data, content }: SectionProps) {
 
         {/* Responsive Grid of Images */}
         {items.length > 0 ? (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 pt-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {items.map((item, index) => {
               const bgImg = item.image || `https://picsum.photos/seed/gallery-${index}/600/400`;
+
+              // Extract category tag from caption (e.g. "[UI/UX] Redesain Dashboard..." → "UI/UX")
+              const tagMatch = item.caption?.match(/^\[(.+?)\]/);
+              const tag = tagMatch ? tagMatch[1] : null;
+              const cleanCaption = tagMatch ? item.caption?.replace(/^\[.+?\]\s*/, '') : item.caption;
+
               return (
                 <motion.div
                   key={`${id}-item-${index}`}
@@ -60,7 +66,7 @@ export default function Gallery({ id, data, content }: SectionProps) {
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.08 }}
-                  className="group relative h-72 rounded-2xl overflow-hidden border border-slate-200/60 shadow-sm bg-slate-100 flex flex-col justify-end"
+                  className="group relative h-72 rounded-3xl overflow-hidden shadow-sm bg-white border border-slate-100"
                 >
                   {/* Gallery Image */}
                   <Image
@@ -72,19 +78,25 @@ export default function Gallery({ id, data, content }: SectionProps) {
                     referrerPolicy="no-referrer"
                   />
 
-                  {/* Gradient Overlay for Caption readability */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-60 group-hover:opacity-85 transition-opacity duration-300" />
+                  {/* Gradient Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#1E1B4B]/90 via-transparent to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-300" />
 
-                  {/* Text/Caption details */}
-                  <div className="absolute bottom-0 left-0 right-0 p-5 z-10 transition-transform duration-300 transform translate-y-2 group-hover:translate-y-0">
-                    {item.caption && (
-                      <p className="text-sm font-semibold text-white tracking-wide drop-shadow-sm font-sans">
-                        {item.caption}
+                  {/* Category Tag */}
+                  {tag && (
+                    <span className="absolute top-4 left-4 z-10 px-3 py-1 text-[10px] font-bold rounded-full bg-[#22B8D4]/90 text-white backdrop-blur-sm">
+                      {tag}
+                    </span>
+                  )}
+
+                  {/* Caption */}
+                  <div className="absolute bottom-0 left-0 right-0 p-5 z-10">
+                    {cleanCaption && (
+                      <p className="text-sm font-semibold text-white tracking-wide drop-shadow-sm">
+                        {cleanCaption}
                       </p>
                     )}
                   </div>
 
-                  {/* Watermark Overlay in bottom right corner */}
                   <PoweredByOverlay />
                 </motion.div>
               );
@@ -102,7 +114,7 @@ export default function Gallery({ id, data, content }: SectionProps) {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="text-center text-sm text-slate-500 max-w-xl mx-auto pt-6 leading-relaxed border-t border-slate-200/60"
+            className="text-center text-sm text-slate-500 max-w-xl mx-auto pt-6 leading-relaxed border-t border-slate-200"
           >
             {content}
           </motion.div>

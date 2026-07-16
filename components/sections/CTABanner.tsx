@@ -35,11 +35,11 @@ export default function CTABanner({ id, data, content }: SectionProps) {
   const isWa = ctaLink === 'whatsapp';
 
   return (
-    <section id={id} className="py-20 px-6 bg-blue-600 text-white relative overflow-hidden font-sans">
-      {/* Background decoration elements */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(59,130,246,0.8),transparent_50%)] pointer-events-none" />
-      <div className="absolute -right-16 -top-16 w-64 h-64 bg-blue-500 rounded-full blur-3xl opacity-40 pointer-events-none" />
-      <div className="absolute -left-16 -bottom-16 w-64 h-64 bg-indigo-500 rounded-full blur-3xl opacity-40 pointer-events-none" />
+    <section id={id} className="bg-gradient-to-br from-[#1B1E2B] to-[#22B8D4] rounded-[32px] shadow-xl text-white relative overflow-hidden p-6 md:p-12 lg:p-16">
+      {/* Background decoration */}
+      <div className="absolute inset-0 dot-pattern opacity-10 pointer-events-none" />
+      <div className="absolute -right-16 -top-16 w-64 h-64 bg-white/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute -left-16 -bottom-16 w-64 h-64 bg-[#22B8D4]/20 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-4xl mx-auto text-center space-y-8 relative z-10">
         
@@ -60,7 +60,7 @@ export default function CTABanner({ id, data, content }: SectionProps) {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="text-base md:text-lg text-blue-100 max-w-2xl mx-auto leading-relaxed"
+          className="text-base md:text-lg text-white/80 max-w-2xl mx-auto leading-relaxed"
         >
           {description}
         </motion.p>
@@ -73,11 +73,11 @@ export default function CTABanner({ id, data, content }: SectionProps) {
           transition={{ duration: 0.6, delay: 0.2 }}
         >
           {isWa ? (
-            <WhatsAppButton text={ctaText} className="!bg-white !text-blue-600 hover:!bg-slate-100 shadow-xl shadow-blue-900/15" />
+            <WhatsAppButton text={ctaText} className="!bg-white !text-[#1E1B4B] hover:!bg-white/90 shadow-xl shadow-black/15" />
           ) : (
             <a
               href={ctaLink}
-              className="inline-flex items-center gap-2.5 px-8 py-4 border border-transparent text-base font-bold rounded-full text-blue-600 bg-white hover:bg-slate-50 shadow-xl shadow-blue-900/10 transition duration-300"
+              className="inline-flex items-center gap-2.5 px-8 py-4 rounded-full text-base font-bold text-[#1E1B4B] bg-white hover:bg-white/90 shadow-xl shadow-black/15 transition duration-300"
             >
               <Send size={18} />
               <span>{ctaText}</span>
@@ -91,7 +91,7 @@ export default function CTABanner({ id, data, content }: SectionProps) {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="text-xs text-blue-200 italic pt-6 max-w-md mx-auto leading-relaxed border-t border-blue-500/30"
+            className="text-xs text-white/50 italic pt-6 max-w-md mx-auto leading-relaxed border-t border-white/20"
           >
             {content}
           </motion.p>

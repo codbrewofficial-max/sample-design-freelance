@@ -25,8 +25,8 @@ export default function ValueProposition({ id, data, content }: SectionProps) {
   const points = valueData.points || valueData.items || [];
 
   return (
-    <section id={id} className="py-24 px-6 bg-white text-slate-900 font-sans">
-      <div className="max-w-6xl mx-auto space-y-16">
+    <section id={id} className="bg-[#F5F7FA] rounded-[32px] shadow-xl p-6 md:p-12">
+      <div className="space-y-10 md:space-y-12">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4">
@@ -35,7 +35,7 @@ export default function ValueProposition({ id, data, content }: SectionProps) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-3xl md:text-4xl font-extrabold tracking-tight text-slate-900"
+            className="text-3xl md:text-4xl font-extrabold tracking-tight text-[#1E1B4B]"
           >
             {title}
           </motion.h2>
@@ -50,18 +50,16 @@ export default function ValueProposition({ id, data, content }: SectionProps) {
           </motion.p>
         </div>
 
-        {/* Value Points Grid */}
+        {/* Value Points Grid - 2x2 */}
         {points.length > 0 ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 pt-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
             {points.map((point, index) => {
-              // Dynamically pick a Lucide icon
               const iconName = (point.icon || 'HelpCircle')
                 .toLowerCase()
-                .replace(/-./g, (x) => x[1].toUpperCase()); // kebab-case to camelCase
+                .replace(/-./g, (x) => x[1].toUpperCase());
               
               const formattedIconName = iconName.charAt(0).toUpperCase() + iconName.slice(1);
               
-              // Fallback to standard HelpCircle or Zap if not found
               const IconComponent = (LucideIcons as any)[formattedIconName] || LucideIcons.Zap;
 
               return (
@@ -71,13 +69,13 @@ export default function ValueProposition({ id, data, content }: SectionProps) {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="bg-slate-50 border border-slate-100 rounded-3xl p-8 space-y-6 hover:shadow-lg hover:border-blue-500/10 hover:bg-white transition-all duration-300"
+                  className="bg-white rounded-3xl p-8 space-y-5 shadow-sm hover:shadow-md border border-slate-100 transition-all duration-300"
                 >
-                  <div className="p-3 bg-blue-50 text-blue-600 rounded-2xl w-fit">
+                  <div className="p-3.5 bg-[#22B8D4]/10 text-[#22B8D4] rounded-2xl w-fit">
                     <IconComponent size={24} />
                   </div>
                   <div className="space-y-2">
-                    <h3 className="text-lg font-bold text-slate-950 tracking-tight">
+                    <h3 className="text-lg font-bold text-[#1E1B4B] tracking-tight">
                       {point.title}
                     </h3>
                     <p className="text-slate-600 text-sm leading-relaxed">
@@ -100,7 +98,7 @@ export default function ValueProposition({ id, data, content }: SectionProps) {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="text-center text-sm text-slate-500 max-w-xl mx-auto pt-6 border-t border-slate-100 leading-relaxed"
+            className="text-center text-sm text-slate-500 max-w-xl mx-auto pt-6 border-t border-slate-200 leading-relaxed"
           >
             {content}
           </motion.div>

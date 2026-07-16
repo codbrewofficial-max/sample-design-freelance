@@ -44,9 +44,9 @@ export default function WhatsAppButton({
   const baseStyles = 'inline-flex items-center justify-center gap-2.5 font-bold rounded-full transition-all duration-300 cursor-pointer text-sm md:text-base';
   
   const variantStyles = {
-    solid: 'px-7 py-3.5 bg-emerald-600 hover:bg-emerald-700 text-white shadow-lg shadow-emerald-800/15 hover:shadow-emerald-800/25',
-    outline: 'px-7 py-3.5 bg-transparent border-2 border-emerald-600 text-emerald-600 hover:bg-emerald-50',
-    floating: 'fixed bottom-24 right-6 z-50 p-4 bg-emerald-600 hover:bg-emerald-700 text-white rounded-full shadow-2xl hover:scale-110 active:scale-95 transition-transform duration-300',
+    solid: 'px-7 py-3.5 bg-gradient-to-r from-[#1B1E2B] to-[#22B8D4] text-white shadow-lg shadow-[#22B8D4]/15 hover:shadow-[#22B8D4]/25',
+    outline: 'px-7 py-3.5 bg-transparent border-2 border-[#22B8D4] text-[#22B8D4] hover:bg-[#22B8D4]/5',
+    floating: 'fixed bottom-24 right-6 z-50 p-4 bg-gradient-to-r from-[#1B1E2B] to-[#22B8D4] text-white rounded-full shadow-2xl hover:scale-110 active:scale-95 transition-transform duration-300',
   };
 
   const currentStyles = `${baseStyles} ${variantStyles[variant]} ${className}`;

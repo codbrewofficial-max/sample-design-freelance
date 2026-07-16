@@ -22,8 +22,8 @@ export default function MapLocation({ id, data, content }: SectionProps) {
   const mapEmbedUrl = mapData.mapEmbedUrl || 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.691979929255!2d112.7944063!3d-7.2758471!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7fa10fb63ff83%3A0x6b107b1d9bc4155b!2sDepartemen%20Teknik%20Komputer%20ITS!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid';
 
   return (
-    <section id={id} className="py-24 px-6 bg-white text-slate-900 font-sans">
-      <div className="max-w-6xl mx-auto space-y-16">
+    <section id={id} className="bg-[#F5F7FA] rounded-[32px] shadow-xl p-6 md:p-12">
+      <div className="space-y-10 md:space-y-12">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4">
@@ -32,7 +32,7 @@ export default function MapLocation({ id, data, content }: SectionProps) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-3xl md:text-4xl font-extrabold tracking-tight text-slate-900"
+            className="text-3xl md:text-4xl font-extrabold tracking-tight text-[#1E1B4B]"
           >
             {title}
           </motion.h2>
@@ -48,7 +48,7 @@ export default function MapLocation({ id, data, content }: SectionProps) {
         </div>
 
         {/* Address & Map Container */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-stretch">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-10 items-stretch">
           
           {/* Address card (4 cols) */}
           <motion.div
@@ -56,17 +56,17 @@ export default function MapLocation({ id, data, content }: SectionProps) {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="lg:col-span-4 bg-slate-50 p-8 rounded-3xl border border-slate-100 flex flex-col justify-between space-y-8"
+            className="lg:col-span-4 bg-white rounded-3xl shadow-sm border border-slate-100 p-8 flex flex-col justify-between space-y-8"
           >
             <div className="space-y-6">
-              <div className="p-3.5 bg-blue-50 text-blue-600 rounded-2xl w-fit">
+              <div className="p-3.5 bg-[#22B8D4]/10 text-[#22B8D4] rounded-2xl w-fit">
                 <MapPin size={24} />
               </div>
               <div className="space-y-3">
-                <h3 className="text-lg font-bold text-slate-950 tracking-tight">
-                  Alamat Kantor
+                <h3 className="text-lg font-bold text-[#1E1B4B] tracking-tight">
+                  Base Operasi
                 </h3>
-                <p className="text-sm md:text-base text-slate-600 leading-relaxed font-sans">
+                <p className="text-sm md:text-base text-slate-600 leading-relaxed">
                   {address}
                 </p>
               </div>
@@ -85,7 +85,7 @@ export default function MapLocation({ id, data, content }: SectionProps) {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="lg:col-span-8 h-[380px] md:h-[450px] rounded-3xl overflow-hidden border border-slate-200/50 shadow-md relative"
+            className="lg:col-span-8 h-[380px] md:h-[450px] rounded-3xl overflow-hidden shadow-md ring-1 ring-[#22B8D4]/20 relative"
           >
             <iframe
               src={mapEmbedUrl}

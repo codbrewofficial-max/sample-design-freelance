@@ -67,7 +67,7 @@ interface SectionRendererProps {
 
 export default function SectionRenderer({ sections }: SectionRendererProps) {
   return (
-    <>
+    <div className="max-w-7xl mx-auto px-4 md:px-6 space-y-6 md:space-y-8 pb-8 pt-24">
       {sections.map((section) => {
         const normalizedType = section.type.toLowerCase().trim();
         const Component = sectionRegistry[normalizedType];
@@ -101,6 +101,6 @@ export default function SectionRenderer({ sections }: SectionRendererProps) {
           </div>
         );
       })}
-    </>
+    </div>
   );
 }

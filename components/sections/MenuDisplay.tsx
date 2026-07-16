@@ -65,7 +65,7 @@ export default function MenuDisplay({ id, data, content }: SectionProps) {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5, delay: delayIndex * 0.05 }}
-        className="group flex flex-col bg-white rounded-2xl border border-slate-200/60 shadow-xs hover:shadow-md transition-all duration-300 overflow-hidden"
+        className="group flex flex-col bg-white rounded-3xl border border-slate-100 shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden"
       >
         {/* Product Image Container */}
         <div className="relative h-48 w-full overflow-hidden bg-slate-100">
@@ -77,10 +77,12 @@ export default function MenuDisplay({ id, data, content }: SectionProps) {
             className="object-cover transition-transform duration-500 group-hover:scale-105"
             referrerPolicy="no-referrer"
           />
-          {/* Subtle overlay for better contrast */}
-          <div className="absolute inset-0 bg-slate-950/5 opacity-0 group-hover:opacity-10 transition-opacity duration-300" />
-          
-          {/* Watermark Overlay in bottom right corner of the image */}
+          {/* Category Badge */}
+          {item.category && (
+            <span className="absolute top-4 left-4 z-10 px-3 py-1 text-[10px] font-bold rounded-full bg-[#22B8D4]/90 text-white backdrop-blur-sm">
+              {item.category}
+            </span>
+          )}
           <PoweredByOverlay />
         </div>
 
@@ -88,10 +90,10 @@ export default function MenuDisplay({ id, data, content }: SectionProps) {
         <div className="p-5 flex-1 flex flex-col justify-between space-y-4">
           <div className="space-y-2">
             <div className="flex justify-between items-start gap-2">
-              <h4 className="text-base font-bold text-slate-900 tracking-tight leading-snug group-hover:text-amber-700 transition-colors duration-200">
+              <h4 className="text-base font-bold text-[#1E1B4B] tracking-tight leading-snug">
                 {item.name}
               </h4>
-              <span className="text-sm font-bold text-amber-700 shrink-0 font-mono">
+              <span className="text-sm font-bold text-[#22B8D4] shrink-0">
                 {formatPrice(item.price)}
               </span>
             </div>
@@ -105,8 +107,8 @@ export default function MenuDisplay({ id, data, content }: SectionProps) {
   };
 
   return (
-    <section id={id} className="py-24 px-6 bg-slate-50 text-slate-900 overflow-hidden">
-      <div className="max-w-6xl mx-auto space-y-16">
+    <section id={id} className="bg-[#F5F7FA] rounded-[32px] shadow-xl p-6 md:p-12">
+      <div className="space-y-10 md:space-y-12">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4">
           <motion.h2
@@ -114,7 +116,7 @@ export default function MenuDisplay({ id, data, content }: SectionProps) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-3xl md:text-4xl font-extrabold tracking-tight text-slate-900"
+            className="text-3xl md:text-4xl font-extrabold tracking-tight text-[#1E1B4B]"
           >
             {title}
           </motion.h2>
@@ -132,7 +134,7 @@ export default function MenuDisplay({ id, data, content }: SectionProps) {
         {/* Menu Items Grid */}
         {items.length > 0 ? (
           hasCategories ? (
-            <div className="space-y-12">
+            <div className="space-y-10">
               {categoryOrder.map((cat, catIndex) => (
                 <div key={`${id}-cat-${catIndex}`} className="space-y-6">
                   {/* Category Title */}
@@ -140,12 +142,10 @@ export default function MenuDisplay({ id, data, content }: SectionProps) {
                     initial={{ opacity: 0, x: -10 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
-                    className="flex items-center gap-4"
                   >
-                    <h3 className="text-lg md:text-xl font-bold text-slate-900 tracking-tight font-sans shrink-0">
+                    <h3 className="text-lg md:text-xl font-bold text-[#1E1B4B] tracking-tight">
                       {cat}
                     </h3>
-                    <div className="h-px bg-slate-200/80 w-full" />
                   </motion.div>
 
                   {/* Category Grid */}
@@ -158,7 +158,7 @@ export default function MenuDisplay({ id, data, content }: SectionProps) {
               ))}
             </div>
           ) : (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 pt-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {items.map((item, index) => renderCard(item, index, index))}
             </div>
           )
@@ -174,7 +174,7 @@ export default function MenuDisplay({ id, data, content }: SectionProps) {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="text-center text-sm text-slate-500 max-w-xl mx-auto pt-8 leading-relaxed border-t border-slate-200/60"
+            className="text-center text-sm text-slate-500 max-w-xl mx-auto pt-6 leading-relaxed border-t border-slate-200"
           >
             {content}
           </motion.div>

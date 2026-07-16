@@ -1,2 +1,20 @@
 @import "tailwindcss";
 @import "tw-animate-css";
+
+@theme {
+  --color-canvas: #1B1E2B;
+  --color-card-bg: #F5F7FA;
+  --color-accent: #22B8D4;
+  --color-accent-dark: #1A8A9E;
+  --color-accent-light: rgba(34, 184, 212, 0.1);
+  --color-mauve: #A78B9E;
+  --color-mauve-dot: rgba(167, 139, 158, 0.1);
+  --color-navy-dark: #1E1B4B;
+}
+
+@layer utilities {
+  .dot-pattern {
+    background-image: radial-gradient(circle, var(--color-mauve-dot) 1.5px, transparent 1.5px);
+    background-size: 24px 24px;
+  }
+}
