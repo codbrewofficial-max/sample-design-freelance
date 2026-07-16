@@ -1,0 +1,206 @@
+{
+  "businessName": "LabKerKomIT Starter UMKM",
+  "branding": {
+    "primaryColor": "#2563eb",
+    "secondaryColor": "#4f46e5",
+    "accentColor": "#f59e0b",
+    "backgroundColor": "#f8fafc",
+    "textColor": "#0f172a",
+    "fontFamily": "sans"
+  },
+  "contact": {
+    "phone": "+6281234567890",
+    "whatsappNumber": "6281234567890",
+    "whatsappMessage": "Halo LabKerKomIT, saya tertarik dengan layanan Anda.",
+    "email": "contact@labkerkomit.com",
+    "address": "Jl. Teknik Komputer No. 1, Kampus ITS, Surabaya",
+    "socials": {
+      "instagram": "https://instagram.com/labkerkomit",
+      "facebook": "https://facebook.com/labkerkomit"
+    }
+  },
+  "tracking": {
+    "gtmId": "GTM-XXXXXXX",
+    "gaId": "G-XXXXXXXXXX"
+  },
+  "seo": {
+    "siteUrl": "https://boilerplate.labkerkomit.com",
+    "defaultTitle": "LabKerKomIT Public Page Boilerplate",
+    "defaultDescription": "Website public page starter template",
+    "keywords": [
+      "LabKerKomIT",
+      "Boilerplate",
+      "Next.js",
+      "Tailwind"
+    ],
+    "ogImage": "https://picsum.photos/seed/seo/1200/630"
+  },
+  "watermark": {
+    "enabled": true,
+    "poweredByText": "Powered by LabKerKomIT",
+    "poweredByLink": "https://labkerkomit.com",
+    "variants": ["section", "overlay", "floating"]
+  },
+  "pages": [
+    {
+      "slug": "home",
+      "title": "Home",
+      "metaDescription": "Halaman utama website LabKerKomIT",
+      "sections": [
+        {
+          "id": "hero-1",
+          "type": "Hero",
+          "contentFile": "home-hero.md"
+        },
+        {
+          "id": "features-1",
+          "type": "Value-Proposition",
+          "contentFile": "home-features.md"
+        },
+        {
+          "id": "about-1",
+          "type": "About-Story",
+          "contentFile": "home-about.md"
+        },
+        {
+          "id": "team-1",
+          "type": "Team",
+          "contentFile": "home-team.md"
+        },
+        {
+          "id": "gallery-1",
+          "type": "Gallery",
+          "contentFile": "home-gallery.md"
+        },
+        {
+          "id": "testimonials-1",
+          "type": "Testimonials",
+          "contentFile": "home-testimonials.md"
+        },
+        {
+          "id": "map-1",
+          "type": "Map-Location",
+          "contentFile": "home-map.md"
+        },
+        {
+          "id": "contact-1",
+          "type": "Contact-Form",
+          "contentFile": "home-contact.md"
+        },
+        {
+          "id": "cta-banner-1",
+          "type": "CTA-Banner",
+          "contentFile": "home-cta-banner.md"
+        },
+        {
+          "id": "footer-1",
+          "type": "Footer",
+          "contentFile": "home-footer.md"
+        }
+      ]
+    },
+    {
+      "slug": "menu",
+      "title": "Menu Kopi Senja",
+      "metaDescription": "Nikmati berbagai pilihan kopi susu kekinian, camilan lezat, dan minuman non-kopi premium di Kopi Senja.",
+      "sections": [
+        {
+          "id": "menu-hero-1",
+          "type": "Hero",
+          "contentFile": "menu-hero.md"
+        },
+        {
+          "id": "menu-items-1",
+          "type": "Menu-Display",
+          "contentFile": "menu-items.md"
+        },
+        {
+          "id": "menu-cta-1",
+          "type": "CTA-Banner",
+          "contentFile": "menu-cta.md"
+        },
+        {
+          "id": "menu-footer-1",
+          "type": "Footer",
+          "contentFile": "home-footer.md"
+        }
+      ]
+    },
+    {
+      "slug": "tentang",
+      "title": "Tentang Kami",
+      "metaDescription": "Kisah perjalanan Kopi Senja menghadirkan biji kopi lokal terbaik dengan cita rasa autentik.",
+      "sections": [
+        {
+          "id": "tentang-hero-1",
+          "type": "Hero",
+          "contentFile": "tentang-hero.md"
+        },
+        {
+          "id": "tentang-story-1",
+          "type": "About-Story",
+          "contentFile": "tentang-story.md"
+        },
+        {
+          "id": "tentang-team-1",
+          "type": "Team",
+          "contentFile": "tentang-team.md"
+        },
+        {
+          "id": "tentang-footer-1",
+          "type": "Footer",
+          "contentFile": "home-footer.md"
+        }
+      ]
+    },
+    {
+      "slug": "galeri",
+      "title": "Galeri Foto",
+      "metaDescription": "Koleksi foto suasana hangat, produk kopi terlaris, dan kegiatan seru di Kopi Senja.",
+      "sections": [
+        {
+          "id": "galeri-hero-1",
+          "type": "Hero",
+          "contentFile": "galeri-hero.md"
+        },
+        {
+          "id": "galeri-photos-1",
+          "type": "Gallery",
+          "contentFile": "galeri-photos.md"
+        },
+        {
+          "id": "galeri-footer-1",
+          "type": "Footer",
+          "contentFile": "home-footer.md"
+        }
+      ]
+    },
+    {
+      "slug": "kontak",
+      "title": "Hubungi Kami",
+      "metaDescription": "Hubungi Kopi Senja untuk reservasi tempat, pemesanan katering, atau pertanyaan seputar menu kami.",
+      "sections": [
+        {
+          "id": "kontak-hero-1",
+          "type": "Hero",
+          "contentFile": "kontak-hero.md"
+        },
+        {
+          "id": "kontak-form-1",
+          "type": "Contact-Form",
+          "contentFile": "kontak-form.md"
+        },
+        {
+          "id": "kontak-map-1",
+          "type": "Map-Location",
+          "contentFile": "kontak-map.md"
+        },
+        {
+          "id": "kontak-footer-1",
+          "type": "Footer",
+          "contentFile": "home-footer.md"
+        }
+      ]
+    }
+  ]
+}

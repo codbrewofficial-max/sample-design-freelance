@@ -1,0 +1,6 @@
+{
+  "name": "LabKerKomIT Public Page Boilerplate",
+  "description": "Boilerplate starter template website public page milik LabKerKomIT dengan Next.js, Tailwind CSS, dan markdown content parsing.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
